@@ -7,10 +7,16 @@
 ####
 
 team_name = 'Kidus Tsegaye Team' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+strategy_name = 'Collude unti betray '
+strategy_description = 'Keep colluding until the opponent chocies betray'
     
 def move(my_history, their_history, my_score, their_score):
+    if 'b' in their_history:      
+        return 'b'
+    else: 
+        return 'c'
+    
+    
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
     
@@ -53,7 +59,7 @@ if __name__ == '__main__':
               my_score=0,
               their_score=0,
               result='b'):
-         print 'Test passed'
+         print ('Test passed')
      # Test 2: Continue betraying if they collude despite being betrayed.
     test_move(my_history='bbb',
               their_history='ccc', 
