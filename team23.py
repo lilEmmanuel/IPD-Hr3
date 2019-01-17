@@ -7,7 +7,7 @@
 ####
 
 team_name = 'Julian Fletchers Team' # Only 10 chars displayed.
-strategy_name = 'Possible Partners'
+strategy_name = 'Backstabber'
 strategy_description = 'If the last item in their history is \'c\' then collude unless it colluded the last round'
     
 def move(my_history, their_history, my_score, their_score):
