@@ -28,25 +28,25 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    choice = rand.randint(1,3)
+    choice = random.randint(1,3)
     
-    if choice = 1
+    if choice ==1:
         
         return 'c'
     
-    if choice = 2
+    if choice == 2:
     
         return 'b'
         
-    if choice = 3
+    if choice == 3:
     
-        if thier_history[-1] == 'c'
+        if their_history[-1] == 'c':
         
             return 'c'
         
-        else
+        else:
         
-            return 'd'
+            return 'b'
     
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
@@ -72,7 +72,7 @@ if __name__ == '__main__':
               my_score=0,
               their_score=0,
               result='b'):
-         print 'Test passed'
+         print ('Test passed')
      # Test 2: Continue betraying if they collude despite being betrayed.
     test_move(my_history='bbb',
               their_history='ccc', 
