@@ -21,27 +21,23 @@ def move(my_history, their_history, my_score, their_score):
     
     if(my_history == ['']):
         return 'b'
+        
     if(their_history[:-1] == my_history):
+        return 'c'
+        
+    if(their_history[:-1] == ['c'] and my_score>=their_score):
         return 'c'
         
     if(their_history[-3:] == ['b','b','b']):
         return 'b'
+        
     else:
         return 'c'
+        
+        
     if(my_score<their_score):
         return 'b'
     
-    return(my_history,my_score,their_history,their_score)
-
-
-
-
-
-
-
-
-
-
 
 
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
