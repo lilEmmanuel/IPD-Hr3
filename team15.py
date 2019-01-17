@@ -7,8 +7,8 @@
 ####
 
 team_name = "Dane Singers Team" # Only 10 chars displayed.
-strategy_name = 'Beat Ray'
-strategy_description = 'The strategy only betrays'
+strategy_name = 'Backstab - Critical Hit'
+strategy_description = 'The strategy colludes until betrayed, round 150 is reached, or my score is below -5000'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
