@@ -1,4 +1,4 @@
-####
+import random
 # Each team's file must define four tokens:
 #     team_name: a string
 #     strategy_name: a string
@@ -6,29 +6,54 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+team_name = 'Danny Montgomery Team' # Only 10 chars displayed.
+strategy_name = 'creating_maze_bianary'
+strategy_description = '''I used subtraction operation it tracks if they program could colude then I betray after coludes stop to reduce bulk fails.It does it 100 times.
+'''
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
-    
     Make my move.
     Returns 'c' or 'b'. 
     '''
 
+    if [my_history] == []:
+        return 'c'
+    
+    if len(my_history)<8:
+        if int(their_score)< -1000:
+            return 'c' # this prevents me from breaking my score on my first turns
+        else:
+            return 'b'    
+        return 'c'
+    if 7<len(my_history)<31:
+        if their_history[-2] == 'b' or my_score < -1000:
+            return 'b'
+        else:
+            return 'c'
+    elif 101>len(my_history)>30:
+            colludee=int(1)
+            '''it is a random choice it runs seventy times for the IPD program
+            '''
+            if random.randint(0,1)  == colludee:
+                return 'c' 
+            else:
+                return 'b'
+    if len(my_history)>100:
+        if random.random()<0.6: # 60% of the other rounds
+            return 'b' 
+        else:
+            return 'c'
+ 
+    
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
-    # their_history: a string of the same length as history, possibly empty. 
-    # The first round between these two players is my_history[0] and their_history[0].
-    # The most recent round is my_history[-1] and their_history[-1].
-    
-    # Analyze my_history and their_history and/or my_score and their_score.
+    # theze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
-    
-    return 'c'
 
-    
+   
+
+   
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
     from this module. Prints error if return value != result.
@@ -53,7 +78,7 @@ if __name__ == '__main__':
               my_score=0,
               their_score=0,
               result='b'):
-         print 'Test passed'
+         print ('Test passed')
      # Test 2: Continue betraying if they collude despite being betrayed.
     test_move(my_history='bbb',
               their_history='ccc', 
