@@ -7,7 +7,7 @@
 ####
 
 team_name = 'Levy Sahoos Team' # Only 10 chars displayed.
-strategy_name = 'Operation Dont blow leads '
+strategy_name = 'Betray always'
 strategy_description = 'Once my score is ahead of their score, maintain a lead. Betray once lead is established, in other words always betray '
     
 def move(my_history, their_history, my_score, their_score):
