@@ -7,7 +7,7 @@
 ####
 
 team_name = 'Shawn Walsh Team' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
+strategy_name = 'Alternate between collude and betray and adjust to opponent'
 strategy_description = 'How does this strategy decide?'
     
 def move(my_history, their_history, my_score, their_score):
@@ -26,7 +26,7 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
       
-    if len(my_history) == 0:
+    if len(my_history) < 2:
         return 'c'
     if their_history[-1] != their_history[-2]:
         return str(my_history[-1])
