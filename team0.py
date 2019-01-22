@@ -8,7 +8,7 @@ import random
 ####
 
 team_name = 'Peter Amendt\'s Team' # Only 10 chars displayed.
-strategy_name = 'Collude until Betray'
+strategy_name = 'Collude until Oppenent Betrays'
 strategy_description = '''First round Collude
 If opponent colluded last round then collude again
 If betrayed then betray always
