@@ -7,7 +7,7 @@
 ####
 
 team_name = 'Emmanuella Dziuk' # Only 10 chars displayed.
-strategy_name = 'Collude until betrayed, then betray. Trust after 7 moves of collude.'
+strategy_name = 'Collude until betrayed, then betray.'
 strategy_description = 'I will start out colluding always. If the opponent betrays, I will switch to betrayal.'
     
 def move(my_history, their_history, my_score, their_score):
@@ -58,7 +58,7 @@ if __name__ == '__main__':
               my_score=0,
               their_score=0,
               result='b'):
-        print 'Test passed'
+        print ('Test passed')
      # Test 2: Continue betraying if they collude despite being betrayed.
     test_move(my_history='bbb',
               their_history='ccc', 
