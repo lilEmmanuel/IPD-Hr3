@@ -8,8 +8,8 @@ import random
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'Team Ethan' # Only 10 chars displayed.
-strategy_name = 'Random int makes my decision'
+team_name = 'Ethan Pearson Team' # Only 10 chars displayed.
+strategy_name = 'The name the team gives to this strategy'
 strategy_description = 'How does this strategy decide?'
     
 def move(my_history, their_history, my_score, their_score):
