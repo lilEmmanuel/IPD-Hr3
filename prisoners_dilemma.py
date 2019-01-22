@@ -1,4 +1,8 @@
-from __future__ import print_function
+from importlib import reload
+
+import random
+
+import os.path
 
 ##### 
 # Computer Science and Software Engineering
@@ -9,7 +13,7 @@ from __future__ import print_function
 # Project 1.3.10 Collaborating on a Project
 # 
 # To run a tournament, execute this file. 
-# Place each team's strategy in a file in the same directory as this file.
+# Place each team's strategy in a file in the same direcstory as this file.
 # Tournament results saved to tournament.txt in this directory.
 #
 # prisoners_dilemma.py automates competition among different strategies
@@ -34,16 +38,13 @@ import random
 import os.path              
     
 import example0, example1, example2, example3
-import example4, example5, example6, example7
-import team0, team1, team2, team3, team4
-import team5, team6, team7, team8, team9
-import team10, team11, team12, team13, team14
+import example4, example5, example6, example7, example8
+import team24 
 betray = example1
 collude = example0
 
-modules = [example0, example1, example2, example3, example4, example5, example6, example7,
-team0, team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, 
-team11, team12, team13, team14]
+modules = [example0, example1, example2, example3, example4, example5, example6, example7, example8,
+team24]
 for module in modules:
     reload(module)
     print ('reloaded',module)
@@ -270,7 +271,7 @@ def make_section2(modules, scores):
                               'P'+str(index),
                               str(sum(scores[index])/len(modules)),
                               str(modules[index].strategy_name)))
-    section2_list.sort(key=lambda x: int(x[2]), reverse=True)
+    section2_list.sort(key=lambda x: float(x[2]), reverse=True)
     
     # Generate one string per team
     # Rockettes (P1):  -500 points with Backstabber
@@ -350,7 +351,7 @@ def copy_template():
     '''Transfer code in team0.py to team1.py though team14.py
     '''
     directory = os.path.dirname(os.path.abspath(__file__))  
-    with open(os.path.join(directory, 'team0.py'), 'r') as sourcefile:
+    with open(os.path.join(directory, 'team24.py'), 'r') as sourcefile:
         source = sourcefile.readlines()
     for i in range(1, 15):
         target = 'team'+str(i)+'.py'
@@ -378,5 +379,5 @@ def post_to_file(string, filename='tournament.txt', directory=''):
  
 ### Call main_play() if this file is executed
 if __name__ == '__main__':
-    scores, moves, reports = main_play(modules[0:4])   
+    scores, moves, reports = main_play(modules[0:])   
     section0, section1, section2, section3 = reports
