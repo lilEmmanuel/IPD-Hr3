@@ -7,7 +7,7 @@
 ####
 
 team_name = 'Julian Fletchers Team' # Only 10 chars displayed.
-strategy_name = 'Backstabber'
+strategy_name = 'Betray after collude'
 strategy_description = 'If the last item in their history is \'c\' then collude unless it colluded the last round'
     
 def move(my_history, their_history, my_score, their_score):
@@ -24,8 +24,10 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
+    if their_score == 0:
+        return 'c' 
     if their_history[-1] == 'c':
-        if my_score[-1] != 'c':
+        if my_score[-1] == 'b':
             return 'c'  
     else: 
         return 'b'
